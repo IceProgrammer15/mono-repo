@@ -1,0 +1,14 @@
+{
+  "name": "@ali/lib2",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build":"rimraf dist && tsc",
+    "build:watch":"tsc"
+  },
+  "devDependencies": {
+    "rimraf": "~3.0.2",
+    "typescript": "~4.3.5"
+  }
+}
