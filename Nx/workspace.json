@@ -8,7 +8,9 @@
         "build": {
           "executor": "@nrwl/workspace:run-commands",
           "options": {
-            "commands": ["npx rimraf libraries/lib1/dist && npx tsc -p libraries/lib1"],
+            "commands": [
+              "npx rimraf libraries/lib1/dist && npx tsc -p libraries/lib1"
+            ],
             "parallel": false
           }
         }
@@ -21,8 +23,33 @@
         "build": {
           "executor": "@nrwl/workspace:run-commands",
           "options": {
-            "commands": ["npx rimraf libraries/lib2/dist && npx tsc -p libraries/lib2"],
+            "commands": [
+              "npx rimraf libraries/lib2/dist && npx tsc -p libraries/lib2"
+            ],
             "parallel": false
+          }
+        }
+      }
+    },
+    "web": {
+      "root": "apps/web",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/workspace:run-commands",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "command": "node ../../node_modules/.bin/react-app-rewired build",
+            "cwd": "apps/web",
+            "outputPath": "apps/web"
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/workspace:run-commands",
+          "outputs": [],
+          "options": {
+            "command": "node ../../node_modules/.bin/react-app-rewired start",
+            "cwd": "apps/web"
           }
         }
       }
@@ -42,6 +69,20 @@
       "style": "css",
       "linter": "eslint",
       "unitTestRunner": "jest"
+    },
+    "@nrwl/react": {
+      "application": {
+        "style": "css",
+        "linter": "eslint",
+        "babel": true
+      },
+      "component": {
+        "style": "css"
+      },
+      "library": {
+        "style": "css",
+        "linter": "eslint"
+      }
     }
   }
 }
