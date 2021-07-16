@@ -9,7 +9,7 @@
           "executor": "@nrwl/workspace:run-commands",
           "options": {
             "commands": [
-              "npx rimraf libraries/lib1/dist && npx tsc -p libraries/lib1"
+              "npx rimraf dist/libraries/lib1 && npx tsc -p libraries/lib1"
             ],
             "parallel": false
           }
@@ -24,7 +24,7 @@
           "executor": "@nrwl/workspace:run-commands",
           "options": {
             "commands": [
-              "npx rimraf libraries/lib2/dist && npx tsc -p libraries/lib2"
+              "npx rimraf dist/libraries/lib2 && npx tsc -p libraries/lib2"
             ],
             "parallel": false
           }

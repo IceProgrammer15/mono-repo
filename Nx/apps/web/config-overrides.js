@@ -68,7 +68,7 @@ module.exports = {
 
     // Rewrite dist folder to where Nx expects it to be.
 
-    paths.appBuild = path.resolve(__dirname, 'dist/web/build');
+    paths.appBuild = path.resolve(__dirname, '../../dist/apps/web');
 
     return paths;
 
