@@ -1,0 +1,47 @@
+{
+  "version": 2,
+  "projects": {
+    "lib1": {
+      "root": "libraries/lib1",
+      "projectType": "library",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": ["npx rimraf libraries/lib1/dist && npx tsc -p libraries/lib1"],
+            "parallel": false
+          }
+        }
+      }
+    },
+    "lib2": {
+      "root": "libraries/lib2",
+      "projectType": "library",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": ["npx rimraf libraries/lib2/dist && npx tsc -p libraries/lib2"],
+            "parallel": false
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/web"
+  },
+  "generators": {
+    "@nrwl/web:application": {
+      "style": "css",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/web:library": {
+      "style": "css",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    }
+  }
+}
